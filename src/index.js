@@ -12,6 +12,18 @@ function updateTime() {
     );
   }
   //London
+  let newYorkElement = document.querySelector("#newyork");
+  if (newYorkElement) {
+    let newYorkDateElement = newYorkElement.querySelector(".date");
+    let newYorkTimeElement = newYorkElement.querySelector(".time");
+    let newYorkTime = moment().tz("America/New_York");
+
+    newYorkDateElement.innerHTML = newYorkTime.format("MMMM Do YYYY");
+    newYorkTimeElement.innerHTML = newYorkTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
+  //New York
   let londonElement = document.querySelector("#london");
   if (londonElement) {
     let londonDateElement = londonElement.querySelector(".date");
